@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuest | Mission Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MISSION STATUS: <span id="mission-status">INITIALIZING...</span></h1>
+            <div class="stats">
+                <p>XP: <span id="xp-val">0</span></p>
+                <p>RANK: <span id="rank-val">Cadet</span></p>
+            </div>
+        </header>
+        <main>
+            <section id="terminal">
+                <ul id="checklist"></ul>
+            </section>
+            <section id="next-assignment" class="hidden">
+                <hr>
+                <h2>CHOOSE YOUR PATH: MISSION 3</h2>
+                <div class="route-container">
+                    <div class="route-card" id="warrior-path">
+                        <h3>⚔️ THE WARRIOR</h3>
+                        <p>Focus on advanced logic and combat algorithms.</p>
+                    </div>
+                    <div class="route-card" id="architect-path">
+                        <h3>🏗️ THE ARCHITECT</h3>
+                        <p>Design complex structures and data patterns.</p>
+                    </div>
+                    <div class="route-card" id="explorer-path">
+                        <h3>🛰️ THE EXPLORER</h3>
+                        <p>Discover hidden functions and optimize systems.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <button onclick="window.location.href='map.html'" class="map-btn">VIEW SKILL MAP</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // ─── AUTO-POLLING: checks last_results.json every 8 seconds ───
+        // When the AI bot pushes allPass:true, this redirects automatically.
+
+        const BASE = 'https://misha6l.github.io/codequest-python-testkid/';
+        let lastKnownPass = false;
+
+        function checkResults() {
+            fetch('last_results.json?v=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    if (data.allPass === true && !lastKnownPass) {
+                        lastKnownPass = true;
+                        // Small delay so the page feels responsive, then redirect
+                        setTimeout(() => {
+                            window.location.href = BASE + 'pass.html';
+                        }, 1200);
+                    }
+                })
+                .catch(() => {}); // silently ignore network errors
+        }
+
+        // Run once immediately, then every 8 seconds
+        checkResults();
+        setInterval(checkResults, 8000);
+    </script>
+</body>
+</html>

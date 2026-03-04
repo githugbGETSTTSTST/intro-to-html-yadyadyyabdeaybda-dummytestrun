@@ -1,0 +1,24 @@
+{
+  "name": "TestKid",
+  "username": "testkid",
+  "theme": "spongebob",
+  "avatar": "\ud83e\uddfd",
+  "track": "python",
+  "level": 1,
+  "xp": 2750,
+  "streak": 1,
+  "lastActive": "2026-02-26",
+  "currentMission": "python-mission-3",
+  "completedMissions": [
+    "python-mission-1",
+    "python-mission-2"
+  ],
+  "badges": [
+    "\ud83e\uddee Calculator Kid",
+    "\ud83d\udd2e Loop Lord"
+  ],
+  "hintsUsed": 0,
+  "attempts": {
+    "python-mission-1": 1
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "req": "Uses a for loop",
+      "pass": true,
+      "feedback": "The code uses a for loop to iterate through a range of numbers."
+    },
+    {
+      "req": "Uses an if statement inside the loop",
+      "pass": true,
+      "feedback": "The code contains an if statement inside the for loop to check the value of 'i'."
+    },
+    {
+      "req": "Defines at least one function with def",
+      "pass": true,
+      "feedback": "The code defines a function 'check_power' using the 'def' keyword."
+    },
+    {
+      "req": "Uses print() to display output",
+      "pass": true,
+      "feedback": "The code uses print() statements to display various outputs."
+    },
+    {
+      "req": "Script has at least 10 lines of code",
+      "pass": true,
+      "feedback": "The script contains more than 10 lines of code."
+    }
+  ],
+  "allPass": true,
+  "message": "All mandatory pass criteria are met."
+}
